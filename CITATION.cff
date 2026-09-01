@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use these reproducibility materials, please cite the archived v1.0.1 release."
+message: "If you use these reproducibility materials, please cite the archived v1.0.2 release."
 title: "Reproducibility materials for Early Educational Support and Ordinary-School Participation among Persons with Visual Disability in India"
-version: 1.0.1
+version: 1.0.2
 type: software
 authors:
   - family-names: Uppal
