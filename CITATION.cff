@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying manuscript."
+title: "NSS-76 Visual-Disability Education Analysis"
+type: software
+authors:
+  - family-names: Uppal
+    given-names: Shiven
+repository-code: "https://github.com/Shiven-Uppal/nss76-visual-disability-education"
+license: MIT
