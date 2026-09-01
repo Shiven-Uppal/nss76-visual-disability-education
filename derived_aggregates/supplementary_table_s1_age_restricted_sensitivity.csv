@@ -1,0 +1,4 @@
+analytic_population,unweighted_eligible_records,weighted_common_support_coverage_pct,standardised_probability_no_reported_intervention_pct,standardised_probability_reported_intervention_pct,adjusted_percentage_point_difference,psu_bootstrap_95pct_lower,psu_bootstrap_95pct_upper,bootstrap_replicates,interpretation
+Ages 3-35 (main analysis),2721,89.55,53.61,85.25,31.64,27.71,36.26,200,"Survey-weighted adjusted association; not a causal effect"
+Ages 3-17,1191,79.22,53.45,90.52,37.07,32.75,42.26,200,"Survey-weighted adjusted association; not a causal effect"
+Ages 6-17,1064,82.12,56.26,90.60,34.34,29.77,39.86,200,"Survey-weighted adjusted association; not a causal effect"
