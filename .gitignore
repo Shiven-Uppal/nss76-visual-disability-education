@@ -1,0 +1,19 @@
+# Restricted source data: never commit
+/data/raw/
+/data/restricted/
+*.dta
+*.sav
+*.sas7bdat
+*.rds
+*.RData
+*.Rhistory
+
+# Local environments and credentials
+.venv/
+.Rproj.user/
+.Renviron
+.env
+
+# System files
+.DS_Store
+Thumbs.db
