@@ -4,11 +4,12 @@ Reproducibility materials for *Early Educational Support and Ordinary-School Par
 
 ## Contents
 
-- `scripts/` — Python scripts that reproduce the public aggregate outputs from authorised NSS-76 data.
-- `results/` — non-disclosive aggregate tables, including the age-restricted sensitivity analysis.
-- `data_dictionary.md` — source-variable mapping and analytic definitions.
-- `DATA_AVAILABILITY_STATEMENT.md` — wording for the manuscript.
-- `REPRODUCIBILITY_CHECKLIST.md` — release checklist.
+- `code/` — Python scripts that reproduce the public aggregate outputs from authorised NSS-76 data.
+- `derived_aggregates/` — non-disclosive aggregate tables, including the age-restricted sensitivity analysis.
+- `data_dictionary/variable_dictionary.md` — source-variable mapping and analytic definitions.
+- `docs/REPRODUCIBILITY.md` — data-access and reproducibility documentation.
+- `docs/MANUSCRIPT_RELEASE_CHECKLIST.md` — release checklist.
+- `docs/MANUSCRIPT_INSERTIONS.md` — manuscript-ready wording and Supplementary Table S1.
 
 ## Restricted source data
 
@@ -21,13 +22,13 @@ Python 3.11+ with the packages in `requirements.txt`.
 The scripts are written for the official NSS-76 CSV release. Place authorised source files in a local directory that is outside version control, then run:
 
 ```text
-python scripts/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir results
-python scripts/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir results --min-age 3 --max-age 17 --output-name school_standardised_association_3_17.csv
-python scripts/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir results --min-age 6 --max-age 17 --output-name school_standardised_association_6_17.csv
-python scripts/nss76_calibration_targets.py --raw-dir /path/to/nss76-csv --out-dir results
-python scripts/nss76_partially_identified_markov.py --targets results/nss76_visual_occupancy_calibration_targets.csv --out-dir results
-python scripts/nss76_threshold_markov_envelopes.py --targets results/nss76_visual_occupancy_calibration_targets.csv --transition-sets results/partially_identified_markov_transition_sets.csv --out-dir results
-python scripts/nss76_robustness_analyses.py --raw-dir /path/to/nss76-csv --out-dir results --replicates 999
+python code/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir derived_aggregates
+python code/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir derived_aggregates --min-age 3 --max-age 17 --output-name school_standardised_association_3_17.csv
+python code/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir derived_aggregates --min-age 6 --max-age 17 --output-name school_standardised_association_6_17.csv
+python code/nss76_calibration_targets.py --raw-dir /path/to/nss76-csv --out-dir derived_aggregates
+python code/nss76_partially_identified_markov.py --targets derived_aggregates/nss76_visual_occupancy_calibration_targets.csv --out-dir derived_aggregates
+python code/nss76_threshold_markov_envelopes.py --targets derived_aggregates/nss76_visual_occupancy_calibration_targets.csv --transition-sets derived_aggregates/partially_identified_markov_transition_sets.csv --out-dir derived_aggregates
+python code/nss76_robustness_analyses.py --raw-dir /path/to/nss76-csv --out-dir derived_aggregates --replicates 999
 ```
 
 The main and age-restricted association analyses use 200 PSU-within-stratum bootstrap resamples, matching the manuscript. The dynamic analysis uses 999 resamples.
