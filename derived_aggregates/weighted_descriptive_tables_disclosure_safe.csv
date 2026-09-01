@@ -1,0 +1,30 @@
+table,code,category,unweighted_n,weighted_population,weighted_percent
+age group,1,0-2,55,14947.46,0.544836167134758
+age group,2,3-10,500,105313.05,3.8386694803847026
+age group,3,11-17,691,141847.17,5.1703412099254615
+age group,4,18-35,1531,324473.03,11.827069080887412
+age group,5,36+,9189,2156897.22,78.61908406166768
+gender,1,male,6009,1376588.65,50.17677142385468
+gender,2,female,5952,1366079.35,49.7937065599066
+sector,1,rural,8803,2094732.64,76.35317992151664
+sector,2,urban,3163,648745.29,23.646820078483376
+visual disability category,1,no light perception,3549,789226.1,28.767357352132958
+visual disability category,2,light perception; cannot count fingers up to 3 ft; spectacles,1944,432566.5,15.767085102813276
+visual disability category,3,light perception; cannot count fingers up to 3 ft; no spectacles,1950,471668.66,17.192362105132737
+visual disability category,4,cannot count fingers 3-10 ft; spectacles,2126,465738.7,16.97621456717897
+visual disability category,5,cannot count fingers 3-10 ft; no spectacles,2397,584277.97,21.29698087274207
+aid/appliance pathway,1,advised and acquired,3919,865224.64,31.537510491290885
+aid/appliance pathway,2,not acquired: unaffordable,1142,268004.92,9.768801748662144
+aid/appliance pathway,3,not acquired: unavailable,217,44568.82,1.6245372165250114
+aid/appliance pathway,4,not acquired: other,284,67829.83,2.4724029764657156
+aid/appliance pathway,5,not advised,6404,1497849.72,54.59674756705624
+regular use among acquired aid,1,regular use,3219,700876.23,81.00511677522267
+regular use among acquired aid,2,not regular use,700,164348.41,18.994883224777325
+"pre-school intervention, age 3-35",1,attended,344,61462.14,10.752023259668677
+"pre-school intervention, age 3-35",2,did not attend,2378,510171.11,89.24797674033132
+"ever ordinary-school enrolment, age 3-35",1,ever enrolled,1495,313517.51,54.845919127342576
+"ever ordinary-school enrolment, age 3-35",2,never enrolled,1227,258115.74,45.154080872657424
+"secondary-or-above, age 15+",0,below secondary,9673,2261476.6,88.75435902618408
+"secondary-or-above, age 15+",1,secondary or above,1366,286540.9,11.245640973815918
+"employed usual status (ps+ss), age 15+",0,not employed,9723,2243914.47,88.06511219016355
+"employed usual status (ps+ss), age 15+",1,employed,1316,304103.02999999997,11.93488780983647
