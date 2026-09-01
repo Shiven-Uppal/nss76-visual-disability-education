@@ -1,12 +1,20 @@
-# Restricted source data: never commit
+# Restricted NSS-76 source data and derived respondent-level extracts
 /data/raw/
 /data/restricted/
+/raw_data/
+/restricted_nss76/
+/JSON_PWD_76/
+/SAS_PWD_76/
+/SPSS_PWD_76/
+/STATA_PWD_76/
 *.dta
 *.sav
+*.xpt
 *.sas7bdat
 *.rds
 *.RData
-*.Rhistory
+*.zip
+*.tar.gz
 
 # Local environments and credentials
 .venv/
