@@ -1,48 +1,37 @@
 # NSS-76 Visual-Disability Education Analysis
 
-Reproducibility materials for:
+Reproducibility materials for *Early Educational Support and Ordinary-School Participation among Persons with Visual Disability in India: NSS-76 Evidence and a Partially Identified Age-Stage Markov Framework*.
 
-> **Early Educational Support and Ordinary-School Participation among Persons with Visual Disability in India: NSS-76 Evidence and a Partially Identified Age-Stage Markov Framework**
+## Contents
 
-## What this repository contains
+- `scripts/` — Python scripts that reproduce the public aggregate outputs from authorised NSS-76 data.
+- `results/` — non-disclosive aggregate tables, including the age-restricted sensitivity analysis.
+- `data_dictionary.md` — source-variable mapping and analytic definitions.
+- `DATA_AVAILABILITY_STATEMENT.md` — wording for the manuscript.
+- `REPRODUCIBILITY_CHECKLIST.md` — release checklist.
 
-- analysis code (to be added);
-- a variable dictionary;
-- derived, non-disclosive aggregate tables;
-- reproducibility documentation; and
-- materials needed to reproduce the manuscript's tables and figures from authorised NSS-76 access.
+## Restricted source data
 
-## What this repository does not contain
+This repository does **not** contain NSS-76 unit-level microdata, respondent-level extracts, or access credentials. The data must be obtained directly from the Ministry of Statistics and Programme Implementation's Online Microdata Library, subject to its data-access terms.
 
-This repository does **not** contain NSS-76 unit-level microdata, personally identifying information, or any restricted-data extracts. Those data cannot be redistributed here under the applicable access terms.
+## Software
 
-## Data access
+Python 3.11+ with the packages in `requirements.txt`.
 
-The NSS 76th Round *Survey of Persons with Disabilities* is administered by India's Ministry of Statistics and Programme Implementation. Authorised users may obtain the survey microdata, metadata, questionnaire, and technical documentation through the official [NSS-76 catalogue](https://microdata.gov.in/NADA/index.php/catalog/154), subject to its data-access agreement.
+The scripts are written for the official NSS-76 CSV release. Place authorised source files in a local directory that is outside version control, then run:
 
-## Reproducing the analysis
+```text
+python scripts/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir results
+python scripts/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir results --min-age 3 --max-age 17 --output-name school_standardised_association_3_17.csv
+python scripts/nss76_school_standardised_association.py --raw-dir /path/to/nss76-csv --out-dir results --min-age 6 --max-age 17 --output-name school_standardised_association_6_17.csv
+python scripts/nss76_calibration_targets.py --raw-dir /path/to/nss76-csv --out-dir results
+python scripts/nss76_partially_identified_markov.py --targets results/nss76_visual_occupancy_calibration_targets.csv --out-dir results
+python scripts/nss76_threshold_markov_envelopes.py --targets results/nss76_visual_occupancy_calibration_targets.csv --transition-sets results/partially_identified_markov_transition_sets.csv --out-dir results
+python scripts/nss76_robustness_analyses.py --raw-dir /path/to/nss76-csv --out-dir results --replicates 999
+```
 
-Once analysis files are added, the intended workflow is:
+The main and age-restricted association analyses use 200 PSU-within-stratum bootstrap resamples, matching the manuscript. The dynamic analysis uses 999 resamples.
 
-1. Obtain authorised NSS-76 microdata directly from the official source.
-2. Place the locally authorised files in `data/raw/` (this directory is ignored by Git).
-3. Run the scripts in `code/` in numerical order.
-4. Compare regenerated outputs with the aggregate tables and figures in `derived_aggregates/` and `output/`.
+## Interpretation boundary
 
-The repository will contain only material that can be made public safely.
-
-## Repository structure
-
-- `code/` — analysis scripts and environment instructions
-- `data_dictionary/` — variable definitions and construction rules
-- `derived_aggregates/` — public aggregate estimates only
-- `output/` — regenerated tables and figures
-- `docs/` — reproducibility and data-access documentation
-
-## Citation
-
-If you use these materials, please cite the accompanying manuscript. A release-specific Zenodo DOI will be added after the first archived GitHub release.
-
-## License
-
-Unless otherwise stated, code in this repository is released under the [MIT License](LICENSE). No licence is granted for NSS-76 microdata or other restricted source files.
+The results are survey-weighted descriptive estimates, adjusted non-causal associations, and sharp age-stage bounds. They do not identify an intervention effect, individual annual transition probabilities, an ICER, net present value, or return on investment.
