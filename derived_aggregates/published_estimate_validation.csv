@@ -1,0 +1,6 @@
+indicator,published_percent,computed_percent,computed_rounded_1dp,passes_published_rounding
+preschool_intervention_age_3_35_pct,10.1,10.10614920299012,10.1,True
+ever_enrolled_ordinary_school_age_3_35_pct,62.9,62.91295031824105,62.9,True
+lfpr_age_15_plus_pct,23.8,23.79463977089154,23.8,True
+wpr_age_15_plus_pct,22.8,22.797305459729785,22.8,True
+unemployment_rate_age_15_plus_pct,4.2,4.191424290363965,4.2,True
