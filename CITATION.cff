@@ -1,6 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the accompanying manuscript."
-title: "NSS-76 Visual-Disability Education Analysis"
+message: "If you use these reproducibility materials, please cite the archived v1.0.0 release."
+title: "Reproducibility materials for Early Educational Support and Ordinary-School Participation among Persons with Visual Disability in India"
+version: 1.0.0
 type: software
 authors:
   - family-names: Uppal
